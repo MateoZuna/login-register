@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    font-family: "Montserrat", serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+.container {
+    border-radius: 30px;
+    background-color: white;
+    width: 1175px;
+    height: 575px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.637);
+    transform: scale(0);
+    animation: boom 0.5s ease-out forwards;
+}
+
+@keyframes boom {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+.content {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+    gap: 10px;
+}
+.left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Alineación en la parte superior */
+    align-items: center; /* Centra el contenido horizontalmente */
+    border-radius: 20px;
+    background-color: #f9f9f9;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.459);
+}
+
+.cards-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+    align-items: center;
+    margin-top: 10px;
+}
+.right {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 20px;
+    gap: 20px;
+}
+.section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.459);
+    padding: 10px;
+    position: relative; /* Asegura que los títulos se ubiquen dentro del contenedor */
+}
+.section:hover {
+    background-color: #ffd000; /* Amarillo claro */
+    color: white; /* Letras blancas */
+    cursor: pointer; /* Cambia el cursor a pointer */
+}
+.usuario, .chatbot {
+    display: flex;
+    gap: 40px; /* Menor separación entre la imagen y el texto */
+    align-items: center;
+    padding: 20px; /* Reducido para más separación alrededor */
+    flex-direction: row-reverse; /* Invertir posiciones */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+    cursor: pointer; /* Cambia el cursor a pointer */
+}
+.usuario:hover, .chatbot:hover {
+    background-color: #ffd000; /* Cambia a amarillo claro */
+    color: white; /* Letras cambian a blanco */
+}
+.usuario:hover .profile-image, .chatbot:hover .chatbot-image {
+    animation: mini-boom 0.4s ease-out; /* Aplica la animación al círculo */
+}
+@keyframes mini-boom {
+    0% {
+        transform: scale(1); /* Tamaño inicial */
+    }
+    50% {
+        transform: scale(1.2); /* Escala máxima */
+    }
+    100% {
+        transform: scale(1); /* Regresa al tamaño normal */
+    }
+}
+/* Estilos para el círculo de usuario */
+.profile-image {
+    width: 130px; /* Tamaño reducido */
+    height: 130px; /* Tamaño reducido */
+    border-radius: 50%; /* Forma circular */
+    background-color: #e0e0e0; /* Placeholder para la imagen */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease; /* Transición por si se detiene */
+}
+/* Estilos para el rectángulo de chatbot */
+.chatbot-image {
+    width: 250px; /* Tamaño más pequeño */
+    height: 150px; /* Tamaño más pequeño */
+    border-radius: 15px; /* Bordes redondeados */
+    background-color: #c0c0c0; /* Placeholder para la imagen */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease; /* Transición por si se detiene */
+}
+/* Estilos del texto */
+.user-details, .chatbot-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px; /* Menos espacio entre las líneas de texto */
+}
+.user-details p, .chatbot-text p {
+    margin: 0;
+    font-size: 14px; /* Reducido el tamaño de la fuente */
+    color: #333; /* Color por defecto */
+    transition: color 0.3s ease; /* Transición suave al cambiar color */
+}
+h2, .chatbot-title {
+    font-size: 24px;
+    color: #333;
+}
+.usuario-title, .chatbot-title {
+    position: absolute;
+    top: 10px; /* Coloca el título en la parte superior */
+    left: 20px; /* Añade un pequeño margen */
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+/* Estilos para las tarjetas */
+.card {
+    width: 150px; /* Ancho de la tarjeta más pequeño */
+    height: 180px; /* Altura de la tarjeta más pequeña */
+    background-color: white;
+    border: 4px solid #ffd000; /* Borde amarillo */
+    border-radius: 15px; /* Bordes redondeados */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+    cursor: pointer;
+}
+.card:hover {
+    background-color: #ffd000; /* Fondo amarillo en hover */
+}
+.card:hover .card-plus, .card:hover .card-text {
+    color: white; /* Cambio de color a blanco para el signo "+" y el texto */
+    transition: color 0.3s ease; /* Animación suave */
+}
+.card-image img {
+    width: 80px; /* Ajusta el tamaño de la imagen */
+    height: 80px;
+    transition: opacity 0.3s ease; /* Transición suave para la imagen */
+}
+.card:hover .card-image img {
+    opacity: 0.8; /* Aplica un efecto sutil a la imagen */
+}
+.card-plus {
+    font-size: 48px; /* Tamaño grande para el signo "+" */
+    color: #ffd000; /* Color amarillo por defecto */
+    font-weight: bold;
+    transition: color 0.3s ease; /* Animación suave al cambiar el color */
+}
+.card-text {
+    margin-top: 10px;
+    color: #333; /* Color del texto por defecto */
+    font-size: 14px;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Transición suave */
+}
