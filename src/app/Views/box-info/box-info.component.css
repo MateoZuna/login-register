@@ -88,6 +88,7 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     padding: 20px;
+    cursor: pointer;
     gap: 10px; /* Espacio entre ícono y texto */
 }
 
