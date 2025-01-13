@@ -9,10 +9,12 @@ import { TemperatureComponent } from './Views/temperature/temperature.component'
 import { HumidityComponent } from './Views/humidity/humidity.component';
 import { WeightComponent } from './Views/weight/weight.component';
 import { CamerasComponent } from './Views/cameras/cameras.component';
+import { BoxRegisterComponent } from './Views/box-register/box-register.component';
+import { NotFoundComponent } from './Views/not-found/not-found.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CamerasComponent, WeightComponent, HumidityComponent, TemperatureComponent, LoginComponent, RegisterComponent, SelectorComponent, InterfaceUserComponent, BoxInfoComponent],
+  imports: [RouterOutlet, NotFoundComponent, BoxRegisterComponent, CamerasComponent, WeightComponent, HumidityComponent, TemperatureComponent, LoginComponent, RegisterComponent, SelectorComponent, InterfaceUserComponent, BoxInfoComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
